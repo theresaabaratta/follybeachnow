@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folly Beach Events | Festivals, Parades &amp; Live Music | Folly Beach Now</title>
+  <meta name="description" content="Folly Beach events all year long: spring festivals, 4th of July, live music, the Halloween carnival, the Christmas parade and more on Folly Beach, SC.">
+  <link rel="canonical" href="https://www.follybeachnow.com/events.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Folly Beach Events | Folly Beach Now">
+  <meta property="og:description" content="Festivals, parades, live music and seasonal events on Folly Beach, South Carolina.">
+  <meta property="og:url" content="https://www.follybeachnow.com/events.html">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sky: #bfeef4; --ocean: #3a9ad9; --ocean-dark: #2b7fbf; --navy: #1f4e79;
+      --navy-deep: #173b5c; --lime: #8cc63f; --lime-dark: #6fa52a; --sand: #f6f1e7;
+      --ink: #3d4a55; --muted: #7b8a96; --line: #e3ecf1;
+    }
+    body { font-family: 'Raleway', sans-serif; color: var(--ink); background: var(--sky); }
+    a { color: var(--ocean); text-decoration: none; }
+    a:hover { color: var(--navy); }
+    .page-shell { max-width: 1320px; margin: 0 auto; background: #fff; box-shadow: 0 0 40px rgba(31,78,121,.08); }
+
+    .brand-logo { font-family: 'Righteous', cursive; font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1; color: var(--navy); -webkit-text-stroke: 1.5px var(--lime-dark); text-transform: uppercase; }
+    .brand-logo span { color: var(--lime); -webkit-text-stroke: 1.5px var(--navy); }
+    .brand-tagline { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+    .main-nav { background: var(--ocean); }
+    .main-nav .nav-link { color: #fff !important; text-transform: uppercase; letter-spacing: .14em; font-size: .88rem; font-weight: 500; padding: 1.35rem 1.25rem !important; border-bottom: 4px solid transparent; }
+    .main-nav .nav-link:hover, .main-nav .nav-link.active { background: var(--ocean-dark); border-bottom-color: var(--lime); }
+    .nav-social a { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 68px; background: var(--navy); color: #fff; border-left: 1px solid rgba(255,255,255,.08); font-size: 1.1rem; }
+    .nav-social a:hover { background: var(--navy-deep); color: var(--lime); }
+    .navbar-toggler { border-color: rgba(255,255,255,.6); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    .page-title { background: #f5f7f7; padding: 50px 0; }
+    .page-title h1 { font-weight: 300; font-size: clamp(2rem, 4vw, 3rem); color: var(--navy); letter-spacing: .03em; }
+    .breadcrumb a { color: var(--muted); }
+
+    .section { padding: 70px 0; }
+    .bg-sand { background: var(--sand); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .78rem; color: var(--ocean); font-weight: 600; }
+    .section-title { font-weight: 300; font-size: clamp(1.8rem, 3.2vw, 2.5rem); color: var(--navy); }
+
+    /* Jump links */
+    .jump-links a { display: inline-block; border: 1px solid var(--line); padding: .5rem 1rem; margin: 0 .35rem .5rem 0; color: var(--navy); font-size: .88rem; letter-spacing: .06em; text-transform: uppercase; background: #fff; }
+    .jump-links a:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+    /* ONE photo per section — swap in your image at the path shown; gradient shows until then */
+    .section-photo { min-height: 100%; min-height: 360px; background-size: cover; background-position: center; position: relative; }
+    .section-photo .season-label { position: absolute; left: 0; bottom: 0; background: var(--lime); color: var(--navy-deep); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: .8rem; padding: .7rem 1.2rem; }
+    .photo-spring { background-image: url('images/events-spring.jpg'), linear-gradient(135deg, #8cc63f, #3a9ad9); }
+    .photo-summer { background-image: url('images/events-summer.jpg'), linear-gradient(135deg, #f7b267, #f25f5c); }
+    .photo-fall   { background-image: url('images/events-fall.jpg'),   linear-gradient(135deg, #f7b267, #1f4e79); }
+    .photo-winter { background-image: url('images/events-winter.jpg'), linear-gradient(135deg, #bfeef4, #1f4e79); }
+    .photo-weekly { background-image: url('images/events-live-music.jpg'), linear-gradient(135deg, #3a9ad9, #173b5c); }
+
+    .event-row { border-bottom: 1px solid var(--line); padding: 1.1rem 0; }
+    .event-row:last-child { border-bottom: 0; }
+    .event-row h3 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: .25rem; }
+    .event-row .when { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ocean); font-weight: 600; }
+    .event-row p { margin: 0; font-size: .95rem; }
+
+    .tips-box { background: var(--navy); color: #dbeef9; padding: 2rem; }
+    .tips-box h2 { color: #fff; font-weight: 300; }
+    .tips-box i { color: var(--lime); margin-right: .6rem; }
+
+    .btn-ocean { background: var(--ocean); color: #fff; border-radius: 0; text-transform: uppercase; letter-spacing: .14em; font-size: .85rem; padding: .9rem 1.8rem; border: 0; }
+    .btn-ocean:hover { background: var(--navy); color: #fff; }
+    .btn-lime { background: var(--lime); color: var(--navy-deep); border-radius: 0; text-transform: uppercase; letter-spacing: .14em; font-size: .85rem; font-weight: 700; padding: .9rem 1.8rem; border: 0; }
+    .btn-lime:hover { background: #fff; color: var(--navy); }
+
+    .footer-stripe { display: flex; height: 6px; }
+    .footer-stripe span { flex: 1; }
+    .footer-stripe span:nth-child(1) { background: #3a9ad9; }
+    .footer-stripe span:nth-child(2) { background: #3386c2; }
+    .footer-stripe span:nth-child(3) { background: #2b72a8; }
+    .footer-stripe span:nth-child(4) { background: #245f8f; }
+    .site-footer { background: var(--sky); font-size: .9rem; color: var(--muted); }
+    .site-footer a { color: var(--ink); }
+    .site-footer a:hover { color: var(--ocean); }
+
+    @media (max-width: 991.98px) {
+      .main-nav .nav-link { padding: .9rem 1rem !important; border-bottom: 0; }
+      .section-photo { min-height: 240px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.follybeachnow.com/events.html#webpage",
+        "url": "https://www.follybeachnow.com/events.html",
+        "name": "Folly Beach Events",
+        "description": "Seasonal festivals, parades, live music and community events on Folly Beach, South Carolina.",
+        "isPartOf": { "@id": "https://www.follybeachnow.com/#website" },
+        "about": { "@type": "Place", "name": "Folly Beach, South Carolina" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.follybeachnow.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.follybeachnow.com/events.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div class="page-shell">
+
+  <header class="py-4">
+    <div class="container d-md-flex align-items-center gap-4">
+      <a href="index.html" class="brand-logo d-inline-block" aria-label="Folly Beach Now home">Folly Beach <span>Now</span></a>
+      <p class="brand-tagline mb-0 mt-2 mt-md-0">Everything you need to stay current on Folly Beach</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg main-nav p-0 sticky-top">
+    <div class="container px-0 px-lg-3">
+      <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-social d-none d-lg-flex">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-title">
+      <div class="container text-center">
+        <h1 class="mb-2">Folly Beach Events</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Events</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section pb-4">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <p class="eyebrow">Something Happening Every Season</p>
+            <h2 class="section-title mb-3">What's Going On at Folly Beach</h2>
+            <p>From spring festivals on Center Street to golf-cart parades in December, Folly Beach has a packed community calendar. Here's a season-by-season look at the island's favorite events, plus the live music and weekly happenings that keep things lively year-round.</p>
+            <div class="jump-links mt-4">
+              <a href="#spring">Spring</a>
+              <a href="#summer">Summer</a>
+              <a href="#fall">Fall</a>
+              <a href="#winter">Winter</a>
+              <a href="#weekly">Live Music &amp; Weekly</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPRING -->
+    <section class="section" id="spring">
+      <div class="container">
+        <div class="row g-5 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="section-photo photo-spring" role="img" aria-label="Spring festival on Folly Beach">
+              <span class="season-label">Spring</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="eyebrow">March &ndash; May</p>
+            <h2 class="section-title mb-3">Spring Events on Folly Beach</h2>
+            <div class="event-row">
+              <span class="when">April</span>
+              <h3>Sea &amp; Sand Festival</h3>
+              <p>A springtime island tradition with sand sculpting, local vendors, food and family activities.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Spring</span>
+              <h3>Beach Sweeps &amp; Cleanups</h3>
+              <p>Volunteer cleanups that help keep the beach, dunes and marsh in great shape ahead of summer.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Spring</span>
+              <h3>5K Runs &amp; Charity Races</h3>
+              <p>Run or walk the island streets and beachfront in community races that support local causes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMER -->
+    <section class="section bg-sand" id="summer">
+      <div class="container">
+        <div class="row g-5 align-items-stretch flex-lg-row-reverse">
+          <div class="col-lg-5">
+            <div class="section-photo photo-summer" role="img" aria-label="Summer on Folly Beach">
+              <span class="season-label">Summer</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="eyebrow">June &ndash; August</p>
+            <h2 class="section-title mb-3">Summer Events on Folly Beach</h2>
+            <div class="event-row">
+              <span class="when">July</span>
+              <h3>4th of July on Folly</h3>
+              <p>The busiest beach day of the year, with holiday celebrations around the island. Come early and plan your parking.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Summer</span>
+              <h3>Surf Contests</h3>
+              <p>Local surf competitions bring out riders of all ages. Great for watching from the pier or the sand.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Summer</span>
+              <h3>Fishing Tournaments</h3>
+              <p>Anglers compete from boats and the pier during peak summer fishing season.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FALL -->
+    <section class="section" id="fall">
+      <div class="container">
+        <div class="row g-5 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="section-photo photo-fall" role="img" aria-label="Fall on Folly Beach">
+              <span class="season-label">Fall</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="eyebrow">September &ndash; November</p>
+            <h2 class="section-title mb-3">Fall Events on Folly Beach</h2>
+            <div class="event-row">
+              <span class="when">October</span>
+              <h3>Halloween Carnival</h3>
+              <p>Costumes, games and treats for the kids &mdash; a local favorite every October.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Fall</span>
+              <h3>Oyster Season Kickoff</h3>
+              <p>Cooler weather means local oysters are back on menus and at roasts around the area.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Fall</span>
+              <h3>Quieter Beach Days</h3>
+              <p>Warm water, smaller crowds and easier parking make fall one of the best times to visit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WINTER -->
+    <section class="section bg-sand" id="winter">
+      <div class="container">
+        <div class="row g-5 align-items-stretch flex-lg-row-reverse">
+          <div class="col-lg-5">
+            <div class="section-photo photo-winter" role="img" aria-label="Holiday season on Folly Beach">
+              <span class="season-label">Winter</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="eyebrow">December &ndash; February</p>
+            <h2 class="section-title mb-3">Winter Events on Folly Beach</h2>
+            <div class="event-row">
+              <span class="when">December</span>
+              <h3>Christmas Parade</h3>
+              <p>Golf carts, floats and holiday lights rolling down Center Street, Folly style.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">January 1</span>
+              <h3>New Year's Day Plunge</h3>
+              <p>Start the year with a brave (and chilly) dip in the Atlantic alongside a crowd of locals.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Winter</span>
+              <h3>Off-Season Sunsets &amp; Shelling</h3>
+              <p>Empty beaches, great shelling and some of the year's best sunsets over the marsh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKLY / LIVE MUSIC -->
+    <section class="section" id="weekly">
+      <div class="container">
+        <div class="row g-5 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="section-photo photo-weekly" role="img" aria-label="Live music on Folly Beach">
+              <span class="season-label">Year-Round</span>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="eyebrow">Every Week</p>
+            <h2 class="section-title mb-3">Live Music &amp; Weekly Happenings</h2>
+            <div class="event-row">
+              <span class="when">Weekends</span>
+              <h3>Live Music on Center Street</h3>
+              <p>Bars and restaurants around the island host local bands, acoustic sets and DJs, especially Thursday through Sunday.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Weekly</span>
+              <h3>Trivia &amp; Open Mic Nights</h3>
+              <p>Plenty of spots run weekly trivia, karaoke and open mic nights through the year.</p>
+            </div>
+            <div class="event-row">
+              <span class="when">Daily</span>
+              <h3>Sunrise at the Pier</h3>
+              <p>Not an event, exactly, but a Folly ritual worth setting an alarm for.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips + submit -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="tips-box">
+              <h2 class="mb-3">Event Day Tips</h2>
+              <p class="mb-2"><i class="bi bi-car-front"></i>Arrive early &mdash; parking fills up fast on big event days.</p>
+              <p class="mb-2"><i class="bi bi-flag"></i>Follow posted beach and parking rules; they're enforced.</p>
+              <p class="mb-2"><i class="bi bi-calendar-check"></i>Dates change year to year, so confirm with the organizer before you go.</p>
+              <p class="mb-0"><i class="bi bi-recycle"></i>Leave only footprints &mdash; pack out what you bring.</p>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center text-lg-start">
+            <p class="eyebrow">Hosting Something?</p>
+            <h2 class="section-title mb-3">Submit Your Event</h2>
+            <p>Planning a festival, fundraiser, show or community get-together on Folly Beach? Send us the details and we'll consider it for the calendar.</p>
+            <a href="contact.html" class="btn btn-ocean">Submit an Event</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <footer class="site-footer py-4">
+    <div class="container d-md-flex justify-content-between align-items-center">
+      <span>&copy; <span id="year"></span> Folly Beach Now. All rights reserved.</span>
+      <span>
+        <a href="index.html" class="me-3">Home</a>
+        <a href="events.html" class="me-3">Events</a>
+        <a href="dining.html" class="me-3">Dining</a>
+        <a href="about.html" class="me-3">About</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

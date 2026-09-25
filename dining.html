@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folly Beach Dining | Where to Eat on Folly Beach, SC | Folly Beach Now</title>
+  <meta name="description" content="Where to eat on Folly Beach, SC: fresh seafood, tacos and casual beach eats, brunch and coffee, bars with live music, and sweet treats on the island.">
+  <link rel="canonical" href="https://www.follybeachnow.com/dining.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Folly Beach Dining | Folly Beach Now">
+  <meta property="og:description" content="Seafood, casual eats, brunch, bars and dessert on Folly Beach, South Carolina.">
+  <meta property="og:url" content="https://www.follybeachnow.com/dining.html">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sky: #bfeef4; --ocean: #3a9ad9; --ocean-dark: #2b7fbf; --navy: #1f4e79;
+      --navy-deep: #173b5c; --lime: #8cc63f; --lime-dark: #6fa52a; --sand: #f6f1e7;
+      --ink: #3d4a55; --muted: #7b8a96; --line: #e3ecf1;
+    }
+    body { font-family: 'Raleway', sans-serif; color: var(--ink); background: var(--sky); }
+    a { color: var(--ocean); text-decoration: none; }
+    a:hover { color: var(--navy); }
+    .page-shell { max-width: 1320px; margin: 0 auto; background: #fff; box-shadow: 0 0 40px rgba(31,78,121,.08); }
+
+    .brand-logo { font-family: 'Righteous', cursive; font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1; color: var(--navy); -webkit-text-stroke: 1.5px var(--lime-dark); text-transform: uppercase; }
+    .brand-logo span { color: var(--lime); -webkit-text-stroke: 1.5px var(--navy); }
+    .brand-tagline { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+
+    .main-nav { background: var(--ocean); }
+    .main-nav .nav-link { color: #fff !important; text-transform: uppercase; letter-spacing: .14em; font-size: .88rem; font-weight: 500; padding: 1.35rem 1.25rem !important; border-bottom: 4px solid transparent; }
+    .main-nav .nav-link:hover, .main-nav .nav-link.active { background: var(--ocean-dark); border-bottom-color: var(--lime); }
+    .nav-social a { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 68px; background: var(--navy); color: #fff; border-left: 1px solid rgba(255,255,255,.08); font-size: 1.1rem; }
+    .nav-social a:hover { background: var(--navy-deep); color: var(--lime); }
+    .navbar-toggler { border-color: rgba(255,255,255,.6); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    .page-title { background: #f5f7f7; padding: 50px 0; }
+    .page-title h1 { font-weight: 300; font-size: clamp(2rem, 4vw, 3rem); color: var(--navy); letter-spacing: .03em; }
+    .breadcrumb a { color: var(--muted); }
+
+    .section { padding: 70px 0; }
+    .bg-sand { background: var(--sand); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .78rem; color: var(--ocean); font-weight: 600; }
+    .section-title { font-weight: 300; font-size: clamp(1.8rem, 3.2vw, 2.5rem); color: var(--navy); }
+
+    .jump-links a { display: inline-block; border: 1px solid var(--line); padding: .5rem 1rem; margin: 0 .35rem .5rem 0; color: var(--navy); font-size: .88rem; letter-spacing: .06em; text-transform: uppercase; background: #fff; }
+    .jump-links a:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+    /* ONE wide banner photo per section — swap in your image at the path shown; gradient shows until then */
+    .section-banner { height: 320px; background-size: cover; background-position: center; position: relative; margin-bottom: 2.5rem; }
+    .section-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(23,59,92,.75)); }
+    .section-banner .banner-text { position: absolute; left: 0; bottom: 0; z-index: 2; padding: 1.5rem 2rem; color: #fff; }
+    .section-banner .banner-text i { color: var(--lime); font-size: 1.6rem; }
+    .section-banner .banner-text h2 { font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: .25rem 0 0; }
+    .banner-seafood { background-image: url('images/dining-seafood.jpg'), linear-gradient(135deg, #f7b267, #f25f5c); }
+    .banner-casual  { background-image: url('images/dining-casual.jpg'),  linear-gradient(135deg, #8cc63f, #3a9ad9); }
+    .banner-brunch  { background-image: url('images/dining-brunch.jpg'),  linear-gradient(135deg, #e9d8a6, #f7b267); }
+    .banner-bars    { background-image: url('images/dining-bars.jpg'),    linear-gradient(135deg, #3a9ad9, #173b5c); }
+    .banner-sweets  { background-image: url('images/dining-sweets.jpg'),  linear-gradient(135deg, #f7a1c4, #3a9ad9); }
+
+    /* Text-only suggestion cards (no individual photos) */
+    .pick { border: 1px solid var(--line); border-top: 4px solid var(--ocean); background: #fff; padding: 1.5rem; height: 100%; }
+    .bg-sand .pick { border-color: #e8e0cf; border-top-color: var(--ocean); }
+    .pick h3 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: .4rem; }
+    .pick .tag { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lime-dark); font-weight: 700; }
+    .pick p { margin: .5rem 0 0; font-size: .95rem; }
+
+    .tips-box { background: var(--navy); color: #dbeef9; padding: 2rem; }
+    .tips-box h2 { color: #fff; font-weight: 300; }
+    .tips-box i { color: var(--lime); margin-right: .6rem; }
+
+    .btn-ocean { background: var(--ocean); color: #fff; border-radius: 0; text-transform: uppercase; letter-spacing: .14em; font-size: .85rem; padding: .9rem 1.8rem; border: 0; }
+    .btn-ocean:hover { background: var(--navy); color: #fff; }
+
+    .footer-stripe { display: flex; height: 6px; }
+    .footer-stripe span { flex: 1; }
+    .footer-stripe span:nth-child(1) { background: #3a9ad9; }
+    .footer-stripe span:nth-child(2) { background: #3386c2; }
+    .footer-stripe span:nth-child(3) { background: #2b72a8; }
+    .footer-stripe span:nth-child(4) { background: #245f8f; }
+    .site-footer { background: var(--sky); font-size: .9rem; color: var(--muted); }
+    .site-footer a { color: var(--ink); }
+    .site-footer a:hover { color: var(--ocean); }
+
+    @media (max-width: 991.98px) {
+      .main-nav .nav-link { padding: .9rem 1rem !important; border-bottom: 0; }
+      .section-banner { height: 220px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.follybeachnow.com/dining.html#webpage",
+        "url": "https://www.follybeachnow.com/dining.html",
+        "name": "Folly Beach Dining",
+        "description": "Where to eat and drink on Folly Beach, South Carolina: seafood, casual eats, brunch, bars and dessert.",
+        "isPartOf": { "@id": "https://www.follybeachnow.com/#website" },
+        "about": { "@type": "Place", "name": "Folly Beach, South Carolina" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.follybeachnow.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Dining", "item": "https://www.follybeachnow.com/dining.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div class="page-shell">
+
+  <header class="py-4">
+    <div class="container d-md-flex align-items-center gap-4">
+      <a href="index.html" class="brand-logo d-inline-block" aria-label="Folly Beach Now home">Folly Beach <span>Now</span></a>
+      <p class="brand-tagline mb-0 mt-2 mt-md-0">Everything you need to stay current on Folly Beach</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg main-nav p-0 sticky-top">
+    <div class="container px-0 px-lg-3">
+      <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="dining.html">Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-social d-none d-lg-flex">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-title">
+      <div class="container text-center">
+        <h1 class="mb-2">Folly Beach Dining</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dining</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section pb-4">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <p class="eyebrow">Eat &amp; Drink on the Island</p>
+            <h2 class="section-title mb-3">Where to Eat on Folly Beach</h2>
+            <p>Folly Beach dining is all about fresh Lowcountry seafood, flip-flop friendly patios and a good drink with an ocean breeze. Whether you want a sit-down dinner, a quick taco between beach sessions or a slow brunch, here's what the island does best.</p>
+            <div class="jump-links mt-4">
+              <a href="#seafood">Seafood</a>
+              <a href="#casual">Casual Eats</a>
+              <a href="#brunch">Brunch &amp; Coffee</a>
+              <a href="#bars">Bars &amp; Drinks</a>
+              <a href="#sweets">Sweet Treats</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEAFOOD -->
+    <section class="section pt-4" id="seafood">
+      <div class="container">
+        <div class="section-banner banner-seafood" role="img" aria-label="Fresh seafood on Folly Beach">
+          <div class="banner-text">
+            <i class="bi bi-water"></i>
+            <h2>Seafood on Folly Beach</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Lowcountry Classic</span>
+              <h3>Local Shrimp &amp; Grits</h3>
+              <p>The dish to order at least once. Look for local shrimp over creamy stone-ground grits.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Hands-On</span>
+              <h3>Steamed Crab &amp; Shrimp</h3>
+              <p>Casual crab shacks serve buckets of steamed seafood best eaten on an outdoor deck.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Waterfront</span>
+              <h3>Oceanfront Dinner</h3>
+              <p>Book a table with a view for sunset and fresh catch of the day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASUAL -->
+    <section class="section bg-sand" id="casual">
+      <div class="container">
+        <div class="section-banner banner-casual" role="img" aria-label="Casual beach food on Folly Beach">
+          <div class="banner-text">
+            <i class="bi bi-sun"></i>
+            <h2>Casual Beach Eats</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Beach Staple</span>
+              <h3>Fish &amp; Shrimp Tacos</h3>
+              <p>A Folly favorite &mdash; quick, fresh and easy to grab between beach sessions.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Crowd Pleaser</span>
+              <h3>Burgers &amp; Baskets</h3>
+              <p>Laid-back grills serving burgers, wings and fried baskets on shaded patios.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Beach Day</span>
+              <h3>Pizza &amp; To-Go</h3>
+              <p>Grab pizza, subs or sandwiches to take back to the rental or the sand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRUNCH -->
+    <section class="section" id="brunch">
+      <div class="container">
+        <div class="section-banner banner-brunch" role="img" aria-label="Brunch and coffee on Folly Beach">
+          <div class="banner-text">
+            <i class="bi bi-cup-hot"></i>
+            <h2>Brunch &amp; Coffee</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Morning Ritual</span>
+              <h3>Beach Breakfast</h3>
+              <p>Biscuits, omelets and breakfast plates to fuel a morning surf or walk on the beach.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Weekend</span>
+              <h3>Brunch &amp; Mimosas</h3>
+              <p>Slow weekend brunches with Bloody Marys, mimosas and Southern favorites.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Grab &amp; Go</span>
+              <h3>Coffee &amp; Smoothies</h3>
+              <p>Iced coffee, smoothies and acai bowls for a quick start before hitting the sand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BARS -->
+    <section class="section bg-sand" id="bars">
+      <div class="container">
+        <div class="section-banner banner-bars" role="img" aria-label="Bars and drinks on Folly Beach">
+          <div class="banner-text">
+            <i class="bi bi-cup-straw"></i>
+            <h2>Bars &amp; Drinks</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Views</span>
+              <h3>Rooftop Drinks</h3>
+              <p>Catch the sunset with a cocktail and a view over the island and the ocean.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Nightlife</span>
+              <h3>Live Music Bars</h3>
+              <p>Center Street bars with local bands, DJs and a lively crowd on weekends.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Low-Key</span>
+              <h3>Dive Bars &amp; Patios</h3>
+              <p>Salty, laid-back spots for a cold beer after a day at the beach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SWEETS -->
+    <section class="section" id="sweets">
+      <div class="container">
+        <div class="section-banner banner-sweets" role="img" aria-label="Ice cream and desserts on Folly Beach">
+          <div class="banner-text">
+            <i class="bi bi-heart"></i>
+            <h2>Sweet Treats</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Summer Must</span>
+              <h3>Ice Cream &amp; Shaved Ice</h3>
+              <p>Cool off with a cone or snowball after a long, hot beach day.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">Bakery</span>
+              <h3>Baked Goods</h3>
+              <p>Donuts, pastries and cookies for a morning treat or an afternoon snack.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="pick">
+              <span class="tag">After Dinner</span>
+              <h3>Dessert Stops</h3>
+              <p>End the night with something sweet as you stroll Center Street.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="tips-box">
+              <h2 class="mb-3">Folly Dining Tips</h2>
+              <p class="mb-2"><i class="bi bi-clock"></i>Summer weekends get busy &mdash; eat early or late to skip the wait.</p>
+              <p class="mb-2"><i class="bi bi-telephone"></i>Call ahead for larger groups; many spots don't take reservations.</p>
+              <p class="mb-2"><i class="bi bi-sunset"></i>Plan dinner around sunset if you want a view.</p>
+              <p class="mb-0"><i class="bi bi-info-circle"></i>Hours change seasonally, so check before you head out.</p>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center text-lg-start">
+            <p class="eyebrow">Own a Restaurant?</p>
+            <h2 class="section-title mb-3">Get Listed</h2>
+            <p>Run a restaurant, bar, café or food truck on Folly Beach? Send us your details to be considered for this guide.</p>
+            <a href="contact.html" class="btn btn-ocean">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <footer class="site-footer py-4">
+    <div class="container d-md-flex justify-content-between align-items-center">
+      <span>&copy; <span id="year"></span> Folly Beach Now. All rights reserved.</span>
+      <span>
+        <a href="index.html" class="me-3">Home</a>
+        <a href="events.html" class="me-3">Events</a>
+        <a href="dining.html" class="me-3">Dining</a>
+        <a href="about.html" class="me-3">About</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

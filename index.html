@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Folly Beach Now | Everything You Need to Stay Current on Folly Beach, SC</title>
+  <meta name="description" content="Folly Beach Now is your local guide to Folly Beach, South Carolina: events, dining, beach info, things to do, surf, real estate and vacation rentals on The Edge of America.">
+  <link rel="canonical" href="https://www.follybeachnow.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Folly Beach Now | Your Folly Beach, SC Guide">
+  <meta property="og:description" content="Events, dining, beach info and things to do on Folly Beach, South Carolina.">
+  <meta property="og:url" content="https://www.follybeachnow.com/">
+  <meta property="og:image" content="https://www.follybeachnow.com/images/og-folly-beach-now.jpg">
+
+  <!-- Bootstrap 5 + Icons + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sky: #bfeef4;
+      --ocean: #3a9ad9;
+      --ocean-dark: #2b7fbf;
+      --navy: #1f4e79;
+      --navy-deep: #173b5c;
+      --lime: #8cc63f;
+      --lime-dark: #6fa52a;
+      --sand: #f6f1e7;
+      --ink: #3d4a55;
+      --muted: #7b8a96;
+      --line: #e3ecf1;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--ink);
+      background: var(--sky);
+    }
+    a { color: var(--ocean); text-decoration: none; }
+    a:hover { color: var(--navy); }
+
+    /* Boxed page shell (like the original site) */
+    .page-shell {
+      max-width: 1320px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 40px rgba(31, 78, 121, .08);
+    }
+
+    /* ---------- Header ---------- */
+    .top-bar {
+      background: var(--navy-deep);
+      color: #cfe6f5;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+    .top-bar a { color: #cfe6f5; }
+    .top-bar a:hover { color: #fff; }
+
+    .brand-logo {
+      font-family: 'Righteous', cursive;
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      line-height: 1;
+      color: var(--navy);
+      -webkit-text-stroke: 1.5px var(--lime-dark);
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .brand-logo span { color: var(--lime); -webkit-text-stroke: 1.5px var(--navy); }
+    .brand-tagline {
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .header-search .form-control {
+      background: #f2f5f7;
+      border: 0;
+      border-radius: 0;
+      padding: .7rem 1rem;
+      font-size: .9rem;
+    }
+    .header-search .btn { border-radius: 0; background: var(--ocean); color: #fff; }
+
+    /* ---------- Nav ---------- */
+    .main-nav { background: var(--ocean); }
+    .main-nav .nav-link {
+      color: #fff !important;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .88rem;
+      font-weight: 500;
+      padding: 1.35rem 1.25rem !important;
+      border-bottom: 4px solid transparent;
+    }
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+      background: var(--ocean-dark);
+      border-bottom-color: var(--lime);
+    }
+    .nav-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 68px;
+      background: var(--navy);
+      color: #fff;
+      border-left: 1px solid rgba(255,255,255,.08);
+      font-size: 1.1rem;
+    }
+    .nav-social a:hover { background: var(--navy-deep); color: var(--lime); }
+    .navbar-toggler { border-color: rgba(255,255,255,.6); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      /* Swap in your own photo at images/hero-folly-beach.jpg — gradient shows until then */
+      background:
+        linear-gradient(180deg, rgba(23,59,92,.35) 0%, rgba(23,59,92,.75) 100%),
+        url('images/hero-folly-beach.jpg') center/cover no-repeat,
+        linear-gradient(160deg, #6fd0e6 0%, #3a9ad9 45%, #1f4e79 100%);
+    }
+    .hero h1 {
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      letter-spacing: .03em;
+    }
+    .hero h1 strong { font-weight: 700; color: var(--lime); }
+    .hero .lead { font-size: 1.15rem; max-width: 640px; opacity: .95; }
+    .hero-wave {
+      position: absolute; left: 0; right: 0; bottom: -1px; line-height: 0;
+    }
+
+    /* Buttons */
+    .btn-ocean {
+      background: var(--ocean);
+      color: #fff;
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .85rem;
+      padding: .9rem 1.8rem;
+      border: 0;
+    }
+    .btn-ocean:hover { background: var(--navy); color: #fff; }
+    .btn-lime {
+      background: var(--lime);
+      color: var(--navy-deep);
+      border-radius: 0;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .85rem;
+      font-weight: 700;
+      padding: .9rem 1.8rem;
+      border: 0;
+    }
+    .btn-lime:hover { background: #fff; color: var(--navy); }
+    .btn-outline-light { border-radius: 0; letter-spacing: .14em; text-transform: uppercase; font-size: .85rem; padding: .9rem 1.8rem; }
+
+    /* ---------- Section headings ---------- */
+    .section { padding: 80px 0; }
+    .section-title {
+      font-weight: 300;
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      color: var(--navy);
+      letter-spacing: .02em;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .78rem;
+      color: var(--ocean);
+      font-weight: 600;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--ocean);
+      margin-right: .6rem;
+      vertical-align: middle;
+    }
+
+    /* ---------- Quick-link tiles ---------- */
+    .tile {
+      position: relative;
+      display: block;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+    }
+    .tile::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(23,59,92,.7));
+      transition: background .3s;
+    }
+    .tile:hover::after { background: linear-gradient(180deg, rgba(58,154,217,.25), rgba(23,59,92,.85)); }
+    .tile-body {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      padding: 1.25rem;
+    }
+    .tile-body i { font-size: 1.6rem; color: var(--lime); }
+    .tile-body h3 {
+      font-weight: 700;
+      font-size: 1.45rem;
+      margin: .35rem 0 .15rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+    .tile-body p { margin: 0; font-size: .9rem; opacity: .9; }
+    .tile-dining   { background-image: url('images/tile-dining.jpg'),   linear-gradient(135deg, #f7b267, #f25f5c); }
+    .tile-events   { background-image: url('images/tile-events.jpg'),   linear-gradient(135deg, #8cc63f, #2b7fbf); }
+    .tile-beach    { background-image: url('images/tile-beach-info.jpg'), linear-gradient(135deg, #6fd0e6, #1f4e79); }
+    .tile-bachelorette { background-image: url('images/tile-folly-beach-bachelorette.jpg'), linear-gradient(135deg, #f7a1c4, #3a9ad9); }
+
+    /* ---------- Beach conditions strip ---------- */
+    .conditions {
+      background: var(--navy);
+      color: #dbeef9;
+    }
+    .condition-item { padding: 1.6rem 1rem; border-right: 1px solid rgba(255,255,255,.08); }
+    .condition-item:last-child { border-right: 0; }
+    .condition-item i { font-size: 1.8rem; color: var(--lime); }
+    .condition-item h4 {
+      font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+      margin: .6rem 0 .25rem; color: #9cc7e4; font-weight: 600;
+    }
+    .condition-item p { margin: 0; font-size: .95rem; color: #fff; }
+
+    /* ---------- About / intro ---------- */
+    .intro-img {
+      min-height: 380px;
+      background: url('images/folly-pier.jpg') center/cover no-repeat,
+                  linear-gradient(160deg, #bfeef4, #3a9ad9);
+      position: relative;
+    }
+    .intro-img .badge-card {
+      position: absolute; right: -20px; bottom: -20px;
+      background: var(--lime);
+      color: var(--navy-deep);
+      padding: 1.2rem 1.5rem;
+      font-weight: 700;
+      max-width: 220px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .check-list { list-style: none; padding: 0; }
+    .check-list li { padding: .35rem 0; }
+    .check-list i { color: var(--lime-dark); margin-right: .5rem; }
+
+    /* ---------- Events ---------- */
+    .bg-sand { background: var(--sand); }
+    .event-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      height: 100%;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .event-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(31,78,121,.12); }
+    .event-date {
+      background: var(--ocean);
+      color: #fff;
+      text-align: center;
+      min-width: 78px;
+      padding: .9rem .5rem;
+    }
+    .event-date .mo { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; display: block; }
+    .event-date .season { font-size: 1.05rem; font-weight: 700; line-height: 1.2; }
+    .event-card h3 { font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+    .event-meta { font-size: .85rem; color: var(--muted); }
+
+    /* ---------- Dining ---------- */
+    .dine-card {
+      border: 0;
+      border-radius: 0;
+      height: 100%;
+      box-shadow: 0 6px 24px rgba(31,78,121,.07);
+    }
+    .dine-card .card-img-top {
+      height: 190px;
+      border-radius: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .dine-1 { background-image: url('images/dining-seafood.jpg'), linear-gradient(135deg, #f7b267, #f25f5c); }
+    .dine-2 { background-image: url('images/dining-tacos.jpg'),   linear-gradient(135deg, #8cc63f, #3a9ad9); }
+    .dine-3 { background-image: url('images/dining-brunch.jpg'),  linear-gradient(135deg, #e9d8a6, #f7b267); }
+    .dine-card .tag {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ocean);
+      font-weight: 600;
+    }
+    .dine-card h3 { font-size: 1.25rem; color: var(--navy); font-weight: 600; }
+
+    /* ---------- Real estate / rentals ---------- */
+    .feature-card { text-align: center; }
+    .feature-card h3 {
+      font-weight: 300;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--navy);
+    }
+    .feature-card h3 span { color: var(--lime-dark); }
+    .feature-img {
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center;
+      margin: 1.2rem 0 1.2rem;
+    }
+    .feature-realestate { background-image: url('images/folly-real-estate.jpg'),   linear-gradient(135deg, #8cc63f, #1f4e79); }
+    .feature-rentals    { background-image: url('images/folly-vacation-rental.jpg'), linear-gradient(135deg, #f25f5c, #3a9ad9); }
+
+    /* ---------- Blog + sidebar ---------- */
+    .post-item { border-bottom: 1px solid var(--line); padding: 1.2rem 0; }
+    .post-item:first-child { padding-top: 0; }
+    .post-thumb {
+      width: 110px; height: 80px; flex-shrink: 0;
+      background-size: cover; background-position: center;
+      background-color: var(--lime);
+    }
+    .post-item h3 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .03em; margin-bottom: .25rem; }
+    .post-item h3 a { color: var(--navy); }
+    .post-item h3 a:hover { color: var(--ocean); }
+    .post-meta { font-size: .82rem; color: var(--muted); }
+
+    .widget { margin-bottom: 2.5rem; }
+    .widget-title {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .9rem;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .widget-title::before {
+      content: ""; display: inline-block; width: 6px; height: 6px;
+      background: var(--ocean); margin-right: .7rem; vertical-align: middle;
+    }
+    .tag-cloud a {
+      display: inline-block;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: .85rem;
+      padding: .3rem .7rem;
+      margin: 0 .3rem .45rem 0;
+    }
+    .tag-cloud a:hover { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+
+    /* Surf widget */
+    .surf-widget {
+      background: linear-gradient(160deg, var(--navy-deep), var(--ocean-dark));
+      color: #fff;
+      padding: 1.5rem;
+    }
+    .surf-widget .big { font-size: 2.2rem; font-weight: 300; line-height: 1; }
+    .surf-widget small { color: #a9d3ee; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* Mini calendar */
+    .mini-cal { background: #eaf8fb; border: 1px solid #cfeaf1; }
+    .mini-cal .cal-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .8rem 1rem;
+      color: var(--navy);
+      font-size: 1.15rem;
+    }
+    .mini-cal .cal-head button {
+      background: none; border: 0; color: var(--ocean); font-size: 1.1rem;
+    }
+    .mini-cal table { width: 100%; text-align: center; table-layout: fixed; }
+    .mini-cal th { font-weight: 500; font-size: .78rem; color: var(--muted); padding: .4rem 0; }
+    .mini-cal td { padding: .45rem 0; font-size: .88rem; border-top: 1px solid #d6eef4; }
+    .mini-cal td.today { background: var(--ocean); color: #fff; font-weight: 700; }
+    .mini-cal td.has-event { position: relative; font-weight: 700; color: var(--navy); }
+    .mini-cal td.has-event::after {
+      content: ""; position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%);
+      width: 5px; height: 5px; border-radius: 50%; background: var(--lime-dark);
+    }
+
+    /* ---------- Newsletter ---------- */
+    .newsletter {
+      background:
+        linear-gradient(135deg, rgba(58,154,217,.95), rgba(31,78,121,.95)),
+        url('images/folly-sunset.jpg') center/cover no-repeat;
+      color: #fff;
+    }
+    .newsletter .form-control { border-radius: 0; border: 0; padding: .9rem 1rem; }
+
+    /* ---------- Footer ---------- */
+    .footer-stripe { display: flex; height: 6px; }
+    .footer-stripe span { flex: 1; }
+    .footer-stripe span:nth-child(1) { background: #3a9ad9; }
+    .footer-stripe span:nth-child(2) { background: #3386c2; }
+    .footer-stripe span:nth-child(3) { background: #2b72a8; }
+    .footer-stripe span:nth-child(4) { background: #245f8f; }
+
+    .site-footer { background: var(--sky); color: var(--ink); }
+    .site-footer .widget-title { color: var(--navy); }
+    .site-footer ul { list-style: none; padding: 0; }
+    .site-footer ul li { padding: .3rem 0; }
+    .site-footer ul li a { color: var(--ink); }
+    .site-footer ul li a:hover { color: var(--ocean); }
+    .footer-bottom {
+      border-top: 1px solid rgba(31,78,121,.12);
+      font-size: .88rem;
+      color: var(--muted);
+    }
+    .back-to-top {
+      position: fixed; right: 18px; bottom: 18px;
+      width: 46px; height: 46px;
+      background: var(--navy);
+      color: #fff;
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 999;
+    }
+    .back-to-top:hover { background: var(--ocean); color: #fff; }
+
+    @media (max-width: 991.98px) {
+      .main-nav .nav-link { padding: .9rem 1rem !important; border-bottom: 0; }
+      .condition-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .intro-img .badge-card { right: 12px; bottom: 12px; }
+    }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.follybeachnow.com/#website",
+        "name": "Folly Beach Now",
+        "url": "https://www.follybeachnow.com/",
+        "description": "Everything you need to stay current on Folly Beach, South Carolina.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.follybeachnow.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.follybeachnow.com/#organization",
+        "name": "Folly Beach Now",
+        "url": "https://www.follybeachnow.com/",
+        "logo": "https://www.follybeachnow.com/images/folly-beach-now-logo.png",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Folly Beach, South Carolina"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.follybeachnow.com/#webpage",
+        "url": "https://www.follybeachnow.com/",
+        "name": "Folly Beach Now | Everything You Need to Stay Current on Folly Beach, SC",
+        "isPartOf": { "@id": "https://www.follybeachnow.com/#website" },
+        "about": {
+          "@type": "Place",
+          "name": "Folly Beach",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Folly Beach",
+            "addressRegion": "SC",
+            "postalCode": "29439",
+            "addressCountry": "US"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="page-shell">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar py-2 d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-geo-alt-fill me-1"></i> Folly Beach, South Carolina &mdash; The Edge of America</span>
+      <span>
+        <a href="blog.html" class="me-3">Blog</a>
+        <a href="contact.html">Submit an Event</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="py-4">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-7 d-md-flex align-items-center gap-4">
+          <a href="index.html" class="brand-logo d-inline-block" aria-label="Folly Beach Now home">Folly Beach <span>Now</span></a>
+          <p class="brand-tagline mb-0 mt-2 mt-md-0">Everything you need to stay current on Folly Beach</p>
+        </div>
+        <div class="col-lg-5">
+          <form class="header-search d-flex ms-lg-auto" style="max-width:360px" role="search" action="search.html">
+            <input class="form-control" type="search" name="q" placeholder="Search events, dining, beach info..." aria-label="Search">
+            <button class="btn px-3" type="submit" aria-label="Submit search"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar navbar-expand-lg main-nav p-0 sticky-top">
+    <div class="container px-0 px-lg-3">
+      <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-social d-none d-lg-flex">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container py-5">
+        <p class="eyebrow text-white mb-3" style="--bs-text-opacity:1">Folly Beach, SC</p>
+        <h1 class="mb-3">What's happening on <strong>Folly Beach</strong> right now</h1>
+        <p class="lead mb-4">Your local guide to events, places to eat, beach info and the laid-back island life just 20 minutes from downtown Charleston.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="events.html" class="btn btn-lime">See Upcoming Events</a>
+          <a href="dining.html" class="btn btn-outline-light">Where to Eat</a>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" width="100%" height="60">
+          <path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z" fill="#1f4e79"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== BEACH CONDITIONS STRIP ===== -->
+    <section class="conditions" aria-label="Beach at a glance">
+      <div class="container">
+        <div class="row text-center g-0">
+          <div class="col-6 col-lg-3 condition-item">
+            <i class="bi bi-sun"></i>
+            <h4>Weather</h4>
+            <p id="wx-now">Check today's forecast</p>
+          </div>
+          <div class="col-6 col-lg-3 condition-item">
+            <i class="bi bi-water"></i>
+            <h4>Surf Report</h4>
+            <p><a href="#surf" class="text-white">Waves at the Washout &amp; Pier</a></p>
+          </div>
+          <div class="col-6 col-lg-3 condition-item">
+            <i class="bi bi-flag"></i>
+            <h4>Beach Rules</h4>
+            <p><a href="about.html#beach-rules" class="text-white">Dogs, parking &amp; more</a></p>
+          </div>
+          <div class="col-6 col-lg-3 condition-item">
+            <i class="bi bi-calendar-event"></i>
+            <h4>This Week</h4>
+            <p><a href="events.html" class="text-white">Live music &amp; events</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK-LINK TILES ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow">Explore the Island</p>
+          <h2 class="section-title">Plan Your Folly Beach Day</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <a href="dining.html" class="tile tile-dining">
+              <div class="tile-body">
+                <i class="bi bi-cup-straw"></i>
+                <h3>Dining</h3>
+                <p>Seafood, tacos, brunch &amp; rooftop drinks</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a href="events.html" class="tile tile-events">
+              <div class="tile-body">
+                <i class="bi bi-balloon"></i>
+                <h3>Events</h3>
+                <p>Festivals, parades &amp; live music</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a href="about.html#beach-info" class="tile tile-beach">
+              <div class="tile-body">
+                <i class="bi bi-umbrella"></i>
+                <h3>Beach Info</h3>
+                <p>Parking, access points &amp; beach rules</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a href="folly-beach-bachelorette-party.html" class="tile tile-bachelorette">
+              <div class="tile-body">
+                <i class="bi bi-stars"></i>
+                <h3>Folly Beach Bachelorette Party</h3>
+                <p>Beach days, boat trips &amp; nights out for the bride crew</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INTRO / ABOUT FOLLY ===== -->
+    <section class="section pt-0" id="things-to-do">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="intro-img">
+              <div class="badge-card">
+                <i class="bi bi-geo-alt-fill"></i> About 20 minutes from downtown Charleston
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <p class="eyebrow">Welcome to Folly</p>
+            <h2 class="section-title mb-3">The Edge of America</h2>
+            <p>Folly Beach is Charleston's funky, easygoing beach town: a six-mile barrier island with a surf-town soul, colorful beach houses and a Center Street full of local shops, bars and restaurants. Whether you're here for a day trip, a week-long rental or you're lucky enough to live here, Folly Beach Now keeps you in the loop.</p>
+            <ul class="check-list mt-3 mb-4">
+              <li><i class="bi bi-check-circle-fill"></i> Catch a sunrise from the Folly Beach Pier</li>
+              <li><i class="bi bi-check-circle-fill"></i> Surf or watch the pros at the Washout</li>
+              <li><i class="bi bi-check-circle-fill"></i> Walk out to see the Morris Island Lighthouse</li>
+              <li><i class="bi bi-check-circle-fill"></i> Kayak or paddleboard the Folly River marsh</li>
+              <li><i class="bi bi-check-circle-fill"></i> Shop and grab a bite along Center Street</li>
+            </ul>
+            <a href="about.html" class="btn btn-ocean">More About Folly Beach</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UPCOMING EVENTS ===== -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="d-md-flex justify-content-between align-items-end mb-5">
+          <div>
+            <p class="eyebrow">On the Calendar</p>
+            <h2 class="section-title mb-0">Folly Beach Events</h2>
+          </div>
+          <a href="events.html" class="btn btn-ocean mt-3 mt-md-0">All Events</a>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <article class="event-card d-flex flex-column">
+              <div class="d-flex">
+                <div class="event-date"><span class="mo">Spring</span><span class="season">Apr</span></div>
+                <div class="p-3">
+                  <h3 class="mb-1">Sea &amp; Sand Festival</h3>
+                  <p class="event-meta mb-0"><i class="bi bi-geo-alt"></i> Center Street</p>
+                </div>
+              </div>
+              <p class="px-3 pb-3 mb-0 small">Sandcastle building, local vendors and a full day of family fun on the island.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="event-card d-flex flex-column">
+              <div class="d-flex">
+                <div class="event-date"><span class="mo">Summer</span><span class="season">Jul</span></div>
+                <div class="p-3">
+                  <h3 class="mb-1">4th of July on Folly</h3>
+                  <p class="event-meta mb-0"><i class="bi bi-geo-alt"></i> Island-wide</p>
+                </div>
+              </div>
+              <p class="px-3 pb-3 mb-0 small">Beach days, patriotic celebrations and fireworks views from around the island.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="event-card d-flex flex-column">
+              <div class="d-flex">
+                <div class="event-date"><span class="mo">Fall</span><span class="season">Oct</span></div>
+                <div class="p-3">
+                  <h3 class="mb-1">Halloween Carnival</h3>
+                  <p class="event-meta mb-0"><i class="bi bi-geo-alt"></i> Folly Beach</p>
+                </div>
+              </div>
+              <p class="px-3 pb-3 mb-0 small">Costumes, games and treats for the kids &mdash; a local favorite every October.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="event-card d-flex flex-column">
+              <div class="d-flex">
+                <div class="event-date"><span class="mo">Winter</span><span class="season">Dec</span></div>
+                <div class="p-3">
+                  <h3 class="mb-1">Christmas Parade</h3>
+                  <p class="event-meta mb-0"><i class="bi bi-geo-alt"></i> Center Street</p>
+                </div>
+              </div>
+              <p class="px-3 pb-3 mb-0 small">Golf carts, floats and holiday lights rolling down Center Street, Folly style.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DINING ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow">Eat &amp; Drink</p>
+          <h2 class="section-title">Where to Eat on Folly Beach</h2>
+          <p class="text-muted mx-auto" style="max-width:620px">From fresh-caught seafood to tacos with sand still on your feet, the island's food scene is as relaxed as it is good.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card dine-card">
+              <div class="card-img-top dine-1" role="img" aria-label="Fresh seafood on Folly Beach"></div>
+              <div class="card-body p-4">
+                <span class="tag">Seafood</span>
+                <h3 class="mt-1">Fresh Off the Boat</h3>
+                <p class="mb-3">Shrimp, oysters and local catch served with ocean breezes and marsh views.</p>
+                <a href="dining.html#seafood">Explore seafood spots <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card dine-card">
+              <div class="card-img-top dine-2" role="img" aria-label="Casual beach eats"></div>
+              <div class="card-body p-4">
+                <span class="tag">Casual Eats</span>
+                <h3 class="mt-1">Tacos, Burgers &amp; Bites</h3>
+                <p class="mb-3">Flip-flop friendly spots for a quick lunch between beach sessions.</p>
+                <a href="dining.html#casual">Explore casual eats <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card dine-card">
+              <div class="card-img-top dine-3" role="img" aria-label="Brunch and coffee on Folly Beach"></div>
+              <div class="card-body p-4">
+                <span class="tag">Brunch &amp; Coffee</span>
+                <h3 class="mt-1">Morning on the Island</h3>
+                <p class="mb-3">Biscuits, coffee and mimosas to start a slow beach day right.</p>
+                <a href="dining.html#brunch">Explore brunch spots <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REAL ESTATE / VACATION RENTALS ===== -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-6 feature-card">
+            <h3>Folly Beach <span>Latest</span> Real Estate</h3>
+            <div class="feature-img feature-realestate" role="img" aria-label="Folly Beach home with boardwalk to the beach"></div>
+            <p class="text-muted">Search the latest Folly Beach homes, condos and oceanfront property.</p>
+            <a href="#" class="btn btn-ocean">Search More</a>
+          </div>
+          <div class="col-md-6 feature-card">
+            <h3>Folly Beach <span>Vacation</span> Rentals</h3>
+            <div class="feature-img feature-rentals" role="img" aria-label="Colorful Folly Beach vacation rental house"></div>
+            <p class="text-muted">Find beach houses and cottages for your next Folly Beach getaway.</p>
+            <a href="#" class="btn btn-ocean">Search More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LATEST FROM THE BLOG + SIDEBAR ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <p class="eyebrow">Latest News</p>
+            <h2 class="section-title mb-4">From the Folly Beach Now Blog</h2>
+
+            <article class="post-item d-flex gap-3">
+              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-sea-sand.jpg')" aria-label="Sea and Sand Festival post"></a>
+              <div>
+                <h3><a href="blog.html">Sea &amp; Sand Festival: What to Know</a></h3>
+                <p class="post-meta mb-1">Events</p>
+                <p class="mb-0 small">Parking tips, the best times to go and what to bring for the island's big spring festival.</p>
+              </div>
+            </article>
+
+            <article class="post-item d-flex gap-3">
+              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-christmas-parade.jpg')" aria-label="Christmas parade post"></a>
+              <div>
+                <h3><a href="blog.html">Folly Beach Christmas Parade Guide</a></h3>
+                <p class="post-meta mb-1">Events</p>
+                <p class="mb-0 small">Where to watch, when it starts and how the island does the holidays.</p>
+              </div>
+            </article>
+
+            <article class="post-item d-flex gap-3">
+              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-halloween.jpg')" aria-label="Halloween carnival post"></a>
+              <div>
+                <h3><a href="blog.html">Halloween Carnival on Folly</a></h3>
+                <p class="post-meta mb-1">Family</p>
+                <p class="mb-0 small">Costume ideas, kids' activities and a spooky-season plan for families.</p>
+              </div>
+            </article>
+
+            <article class="post-item d-flex gap-3">
+              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-surf.jpg')" aria-label="Surfing post"></a>
+              <div>
+                <h3><a href="blog.html">A Beginner's Guide to Surfing Folly</a></h3>
+                <p class="post-meta mb-1">Things To Do</p>
+                <p class="mb-0 small">Where to paddle out, lessons and reading the waves at the Washout and the pier.</p>
+              </div>
+            </article>
+
+            <a href="blog.html" class="btn btn-ocean mt-4">Read the Blog</a>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="col-lg-4">
+            <div class="widget" id="surf">
+              <h3 class="widget-title">Surf Report</h3>
+              <div class="surf-widget">
+                <small>Folly Beach Pier</small>
+                <div class="d-flex align-items-end gap-2 my-2">
+                  <span class="big"><i class="bi bi-water"></i></span>
+                  <span>Check today's waves, wind &amp; tide before you paddle out.</span>
+                </div>
+                <!-- Replace this link with your Surfline embed / cam widget if you have one -->
+                <a href="https://www.surfline.com/" target="_blank" rel="noopener" class="btn btn-lime btn-sm mt-2">Live Surf Cam</a>
+              </div>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Events Calendar</h3>
+              <div class="mini-cal">
+                <div class="cal-head">
+                  <button type="button" id="calPrev" aria-label="Previous month"><i class="bi bi-chevron-left"></i></button>
+                  <span id="calTitle">Month</span>
+                  <button type="button" id="calNext" aria-label="Next month"><i class="bi bi-chevron-right"></i></button>
+                </div>
+                <table>
+                  <thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+                  <tbody id="calBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Folly Beach Now Tags</h3>
+              <div class="tag-cloud">
+                <a href="blog.html">4th of July</a>
+                <a href="blog.html">Activities</a>
+                <a href="blog.html">Adventure</a>
+                <a href="blog.html">Beach Access</a>
+                <a href="blog.html">Dining</a>
+                <a href="blog.html">Festivals</a>
+                <a href="blog.html">Fishing</a>
+                <a href="blog.html">Live Music</a>
+                <a href="blog.html">Real Estate</a>
+                <a href="blog.html">Surfing</a>
+                <a href="blog.html">Vacation Rentals</a>
+                <a href="blog.html">5K Run</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter section">
+      <div class="container text-center">
+        <p class="eyebrow text-white">Stay Current</p>
+        <h2 class="section-title text-white mb-3">Get the Folly Beach Weekly</h2>
+        <p class="mx-auto mb-4" style="max-width:560px">Events, new restaurants and island news, sent straight to your inbox once a week.</p>
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-5">
+            <label for="nlEmail" class="visually-hidden">Email address</label>
+            <input type="email" class="form-control" id="nlEmail" placeholder="Your email address" required>
+          </div>
+          <div class="col-md-auto">
+            <button type="submit" class="btn btn-lime w-100">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer-stripe" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <footer class="site-footer pt-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-6 col-lg-3">
+          <a href="index.html" class="brand-logo d-inline-block mb-3" style="font-size:1.8rem">Folly Beach <span>Now</span></a>
+          <p class="small">Everything you need to stay current on Folly Beach, South Carolina: events, dining, beach info and island news.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h3 class="widget-title">Explore</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h3 class="widget-title">Blog Categories</h3>
+          <ul>
+            <li><a href="blog.html">Events &amp; Festivals</a></li>
+            <li><a href="blog.html">Food &amp; Drink</a></li>
+            <li><a href="blog.html">Folly Bachelorette</a></li>
+            <li><a href="blog.html">Beach Info</a></li>
+            <li><a href="blog.html">Real Estate</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <h3 class="widget-title">Contact</h3>
+          <ul>
+            <li><i class="bi bi-geo-alt me-2"></i>Folly Beach, SC 29439</li>
+            <li><i class="bi bi-envelope me-2"></i><a href="contact.html">Send us a message</a></li>
+            <li><i class="bi bi-megaphone me-2"></i><a href="contact.html">Submit an event</a></li>
+          </ul>
+          <div class="d-flex gap-3 fs-5 mt-2">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom d-md-flex justify-content-between py-3">
+        <span>&copy; <span id="year"></span> Folly Beach Now. All rights reserved.</span>
+        <span>Independent local guide to Folly Beach, SC.</span>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-shell -->
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Back to top button
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btt.style.display = window.scrollY > 600 ? 'flex' : 'none';
+  });
+
+  // Mini events calendar (Mon-first). Add event dates as 'YYYY-MM-DD'.
+  const eventDates = [
+    // '2026-10-31',
+    // '2026-12-05'
+  ];
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  let calView = new Date();
+  calView.setDate(1);
+
+  function pad(n) { return n < 10 ? '0' + n : n; }
+
+  function renderCal() {
+    const y = calView.getFullYear(), m = calView.getMonth();
+    document.getElementById('calTitle').textContent = monthNames[m] + ' ' + y;
+    const firstDay = (new Date(y, m, 1).getDay() + 6) % 7; // Monday = 0
+    const daysInMonth = new Date(y, m + 1, 0).getDate();
+    const today = new Date();
+    let html = '<tr>', cell = 0;
+    for (let i = 0; i < firstDay; i++, cell++) html += '<td></td>';
+    for (let d = 1; d <= daysInMonth; d++, cell++) {
+      if (cell > 0 && cell % 7 === 0) html += '</tr><tr>';
+      const key = y + '-' + pad(m + 1) + '-' + pad(d);
+      const cls = [];
+      if (y === today.getFullYear() && m === today.getMonth() && d === today.getDate()) cls.push('today');
+      if (eventDates.includes(key)) cls.push('has-event');
+      html += '<td class="' + cls.join(' ') + '">' + d + '</td>';
+    }
+    while (cell % 7 !== 0) { html += '<td></td>'; cell++; }
+    html += '</tr>';
+    document.getElementById('calBody').innerHTML = html;
+  }
+  document.getElementById('calPrev').addEventListener('click', () => { calView.setMonth(calView.getMonth() - 1); renderCal(); });
+  document.getElementById('calNext').addEventListener('click', () => { calView.setMonth(calView.getMonth() + 1); renderCal(); });
+  renderCal();
+</script>
+</body>
+</html>
