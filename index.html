@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Folly Beach Now | Everything You Need to Stay Current on Folly Beach, SC</title>
-  <meta name="description" content="Folly Beach Now is your local guide to Folly Beach, South Carolina: events, dining, beach info, things to do, surf, real estate and vacation rentals on The Edge of America.">
-  <link rel="canonical" href="https://www.follybeachnow.com/">
+  <title>Folly Beach, SC | Guide to Charleston's Beach Town | Folly Beach Now</title>
+  <meta name="description" content="Folly Beach, South Carolina guide: things to do, events, restaurants, surf at the Washout, beach rules, parking and where to stay on Charleston's Edge of America.">
+  <link rel="canonical" href="https://follybeachnow.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Folly Beach Now | Your Folly Beach, SC Guide">
-  <meta property="og:description" content="Events, dining, beach info and things to do on Folly Beach, South Carolina.">
-  <meta property="og:url" content="https://www.follybeachnow.com/">
-  <meta property="og:image" content="https://www.follybeachnow.com/images/og-folly-beach-now.png">
+  <meta property="og:title" content="Folly Beach, SC | Guide to Charleston's Beach Town">
+  <meta property="og:description" content="Things to do, events, dining, surf and beach info for Folly Beach, South Carolina.">
+  <meta property="og:url" content="https://follybeachnow.com/">
+  <meta property="og:image" content="https://follybeachnow.com/images/og-folly-beach-now.png">
 
   <!-- Bootstrap 5 + Icons + Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -429,6 +429,20 @@
     }
     .back-to-top:hover { background: var(--ocean); color: #fff; }
 
+    /* ---------- Guide copy ---------- */
+    .guide-copy { font-size: 1.04rem; line-height: 1.85; }
+    .guide-copy h2 { font-weight: 300; color: var(--navy); font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 2.4rem 0 1rem; }
+    .guide-copy h2:first-child { margin-top: 0; }
+    .guide-copy a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    /* ---------- Things-to-do cards ---------- */
+    .todo-card { display: block; background: #fff; height: 100%; box-shadow: 0 6px 24px rgba(31,78,121,.07); color: var(--ink); transition: transform .2s, box-shadow .2s; }
+    .todo-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(31,78,121,.12); color: var(--ink); }
+    .todo-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .todo-card h3 { font-size: 1.15rem; font-weight: 600; color: var(--navy); margin: 0 0 .35rem; }
+    .todo-card p { font-size: .92rem; margin: 0; }
+    .header-links a { font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+
     @media (max-width: 991.98px) {
       .main-nav .nav-link { padding: .9rem 1rem !important; border-bottom: 0; }
       .condition-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
@@ -443,44 +457,44 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.follybeachnow.com/#website",
+        "@id": "https://follybeachnow.com/#website",
         "name": "Folly Beach Now",
-        "url": "https://www.follybeachnow.com/",
-        "description": "Everything you need to stay current on Folly Beach, South Carolina.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.follybeachnow.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "url": "https://follybeachnow.com/",
+        "description": "Independent guide to Folly Beach, South Carolina."
       },
       {
         "@type": "Organization",
-        "@id": "https://www.follybeachnow.com/#organization",
+        "@id": "https://follybeachnow.com/#organization",
         "name": "Folly Beach Now",
-        "url": "https://www.follybeachnow.com/",
-        "logo": "https://www.follybeachnow.com/images/folly-beach-now-logo.png",
-        "areaServed": {
-          "@type": "Place",
-          "name": "Folly Beach, South Carolina"
-        }
+        "url": "https://follybeachnow.com/",
+        "logo": "https://follybeachnow.com/images/folly-beach-now-logo.png"
+      },
+      {
+        "@type": "TouristDestination",
+        "@id": "https://follybeachnow.com/#folly-beach",
+        "name": "Folly Beach",
+        "alternateName": ["Folly Beach, South Carolina", "Folly Island", "The Edge of America"],
+        "description": "A six-mile barrier island beach town about 12 miles south of downtown Charleston, South Carolina.",
+        "geo": { "@type": "GeoCoordinates", "latitude": 32.655, "longitude": -79.940 },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Folly Beach",
+          "addressRegion": "SC",
+          "postalCode": "29439",
+          "addressCountry": "US"
+        },
+        "containedInPlace": { "@type": "City", "name": "Charleston, South Carolina" },
+        "sameAs": ["https://en.wikipedia.org/wiki/Folly_Beach,_South_Carolina"]
       },
       {
         "@type": "WebPage",
-        "@id": "https://www.follybeachnow.com/#webpage",
-        "url": "https://www.follybeachnow.com/",
-        "name": "Folly Beach Now | Everything You Need to Stay Current on Folly Beach, SC",
-        "isPartOf": { "@id": "https://www.follybeachnow.com/#website" },
-        "about": {
-          "@type": "Place",
-          "name": "Folly Beach",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Folly Beach",
-            "addressRegion": "SC",
-            "postalCode": "29439",
-            "addressCountry": "US"
-          }
-        }
+        "@id": "https://follybeachnow.com/#webpage",
+        "url": "https://follybeachnow.com/",
+        "name": "Folly Beach, SC | Guide to Charleston's Beach Town | Folly Beach Now",
+        "isPartOf": { "@id": "https://follybeachnow.com/#website" },
+        "publisher": { "@id": "https://follybeachnow.com/#organization" },
+        "about": { "@id": "https://follybeachnow.com/#folly-beach" },
+        "primaryImageOfPage": "https://follybeachnow.com/images/hero-folly-beach.png"
       }
     ]
   }
@@ -495,7 +509,7 @@
     <div class="container d-flex justify-content-between align-items-center">
       <span><i class="bi bi-geo-alt-fill me-1"></i> Folly Beach, South Carolina &mdash; The Edge of America</span>
       <span>
-        <a href="blog.html" class="me-3">Blog</a>
+        <a href="blog/folly-beach-vacation.html" class="me-3">Plan a Trip</a>
         <a href="contact.html">Submit an Event</a>
       </span>
     </div>
@@ -506,14 +520,15 @@
     <div class="container">
       <div class="row align-items-center g-3">
         <div class="col-lg-7 d-md-flex align-items-center gap-4">
-          <a href="index.html" class="brand-logo d-inline-block" aria-label="Folly Beach Now home">Folly Beach <span>Now</span></a>
-          <p class="brand-tagline mb-0 mt-2 mt-md-0">Everything you need to stay current on Folly Beach</p>
+          <a href="/" class="brand-logo d-inline-block" aria-label="Folly Beach Now home">Folly Beach <span>Now</span></a>
+          <p class="brand-tagline mb-0 mt-2 mt-md-0">Your guide to Folly Beach, South Carolina</p>
         </div>
         <div class="col-lg-5">
-          <form class="header-search d-flex ms-lg-auto" style="max-width:360px" role="search" action="search.html">
-            <input class="form-control" type="search" name="q" placeholder="Search events, dining, beach info..." aria-label="Search">
-            <button class="btn px-3" type="submit" aria-label="Submit search"><i class="bi bi-search"></i></button>
-          </form>
+          <div class="header-links d-flex flex-wrap gap-3 justify-content-lg-end">
+            <a href="blog/folly-beach-surf-cam.html"><i class="bi bi-camera-video me-1"></i>Surf Cams</a>
+            <a href="blog/the-washout-folly-beach.html"><i class="bi bi-water me-1"></i>The Washout</a>
+            <a href="events.html"><i class="bi bi-calendar-event me-1"></i>Events</a>
+          </div>
         </div>
       </div>
     </div>
@@ -527,20 +542,15 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+          <li class="nav-item"><a class="nav-link" href="#things-to-do">Things To Do</a></li>
           <li class="nav-item"><a class="nav-link" href="blog/folly-beach-bachelorette-party.html">Bachelorette</a></li>
           <li class="nav-item"><a class="nav-link" href="blog/folly-beach-girls-weekend.html">Girls Weekend</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <div class="nav-social d-none d-lg-flex">
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-        </div>
       </div>
     </div>
   </nav>
@@ -550,9 +560,9 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container py-5">
-        <p class="eyebrow text-white mb-3" style="--bs-text-opacity:1">Folly Beach, SC</p>
-        <h1 class="mb-3">What's happening on <strong>Folly Beach</strong> right now</h1>
-        <p class="lead mb-4">Your local guide to events, places to eat, beach info and the laid-back island life just 20 minutes from downtown Charleston.</p>
+        <p class="eyebrow text-white mb-3" style="--bs-text-opacity:1">Charleston, South Carolina</p>
+        <h1 class="mb-3"><strong>Folly Beach</strong>, South Carolina</h1>
+        <p class="lead mb-4">Charleston's laid-back beach town on the Edge of America. Folly Beach Now covers what's happening on the island: events, places to eat, surf, beach rules and where to stay, 20 minutes from downtown.</p>
         <div class="d-flex flex-wrap gap-3">
           <a href="events.html" class="btn btn-lime">See Upcoming Events</a>
           <a href="dining.html" class="btn btn-outline-light">Where to Eat</a>
@@ -577,7 +587,7 @@
           <div class="col-6 col-lg-3 condition-item">
             <i class="bi bi-water"></i>
             <h4>Surf Report</h4>
-            <p><a href="#surf" class="text-white">Waves at the Washout &amp; Pier</a></p>
+            <p><a href="blog/folly-beach-surf-cam.html" class="text-white">Live cams: Washout &amp; Pier</a></p>
           </div>
           <div class="col-6 col-lg-3 condition-item">
             <i class="bi bi-flag"></i>
@@ -654,16 +664,90 @@
           </div>
           <div class="col-lg-6">
             <p class="eyebrow">Welcome to Folly</p>
-            <h2 class="section-title mb-3">The Edge of America</h2>
-            <p>Folly Beach is Charleston's funky, easygoing beach town: a six-mile barrier island with a surf-town soul, colorful beach houses and a Center Street full of local shops, bars and restaurants. Whether you're here for a day trip, a week-long rental or you're lucky enough to live here, Folly Beach Now keeps you in the loop. For downtown information <a href="https://partycharleston.com">party Charleston</a>.</p>
+            <h2 class="section-title mb-3">Charleston's Beach Town on the Edge of America</h2>
+            <p>Folly Beach is a six-mile barrier island about 12 miles south of downtown Charleston, with a surf-town soul, colorful beach houses and a Center Street packed with local shops, bars and restaurants. Locals have called it the Edge of America since the early '90s, when a Center Street surf shop printed the phrase on T-shirts and it stuck. Whether you're here for a day trip, a week in a rental or you live on the island, Folly Beach Now keeps you current. Heading into the city after the beach? <a href="https://partycharleston.com" target="_blank" rel="noopener">Party Charleston</a> covers downtown nightlife.</p>
             <ul class="check-list mt-3 mb-4">
-              <li><i class="bi bi-check-circle-fill"></i> Catch a sunrise from the Folly Beach Pier</li>
-              <li><i class="bi bi-check-circle-fill"></i> Surf or watch the pros at the Washout</li>
-              <li><i class="bi bi-check-circle-fill"></i> Walk out to see the Morris Island Lighthouse</li>
+              <li><i class="bi bi-check-circle-fill"></i> Catch a sunrise from the <a href="https://ccprc.com/3246/Rules" target="_blank" rel="noopener">Folly Beach Pier</a></li>
+              <li><i class="bi bi-check-circle-fill"></i> Surf or watch the pros at <a href="blog/the-washout-folly-beach.html">the Washout</a></li>
+              <li><i class="bi bi-check-circle-fill"></i> See the Morris Island Lighthouse from <a href="https://ccprc.com/3149/Lighthouse-Inlet-Heritage-Preserve" target="_blank" rel="noopener">Lighthouse Inlet</a></li>
               <li><i class="bi bi-check-circle-fill"></i> Kayak or paddleboard the Folly River marsh</li>
-              <li><i class="bi bi-check-circle-fill"></i> Shop and grab a bite along Center Street</li>
+              <li><i class="bi bi-check-circle-fill"></i> Shop and grab a bite along <a href="dining.html">Center Street</a></li>
             </ul>
             <a href="about.html" class="btn btn-ocean">More About Folly Beach</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== THINGS TO DO ===== -->
+    <section class="section bg-sand">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="eyebrow">Island Guides</p>
+          <h2 class="section-title">Things to Do on Folly Beach</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/the-washout-folly-beach.html" class="todo-card">
+              <img src="images/girls-weekend-surf-lesson.png" alt="Surfing on Folly Beach" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Surf the Washout</h3><p>South Carolina's most consistent break, born from Hurricane Hugo.</p></div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/folly-beach-surf-cam.html" class="todo-card">
+              <img src="images/folly-pier.png" alt="Folly Beach Pier" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Folly Beach Surf Cams</h3><p>Live views of the pier, the Washout and 10th Street.</p></div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/folly-beach-vacation.html" class="todo-card">
+              <img src="images/folly-vacation-rental.png" alt="Folly Beach vacation rental" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Plan a Vacation</h3><p>Beach side vs. river side, Center Street and island rules.</p></div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/camping-near-folly-beach.html" class="todo-card">
+              <img src="images/folly-sunset.png" alt="Sunset near Folly Beach" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Camping Near Folly</h3><p>Campgrounds, cabins and RV sites minutes from the sand.</p></div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/folly-beach-bachelorette-party.html" class="todo-card">
+              <img src="images/folly-beach-bachelorette-party-hero.png" alt="Folly Beach bachelorette party" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Folly Beach Bachelorette Party</h3><p>Boat days, Center Street nights and beach houses for the crew.</p></div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <a href="blog/folly-beach-girls-weekend.html" class="todo-card">
+              <img src="images/folly-beach-girls-weekend-hero.png" alt="Girls weekend on Folly Beach" loading="lazy" decoding="async">
+              <div class="p-4"><h3>Girls' Weekend on Folly</h3><p>A laid-back itinerary of brunch, paddling and sunsets.</p></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOLLY BEACH GUIDE COPY ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 guide-copy">
+            <p class="eyebrow">The Folly Beach Guide</p>
+            <h2>Getting to Folly Beach from Charleston</h2>
+            <p>Folly Road (SC-171) runs straight from James Island onto the island and ends at Center Street, about 20 minutes from downtown Charleston without traffic. On summer weekends that drive can easily double, so arriving before 10 a.m. makes the whole day easier. Along the way, <a href="https://www.bowensislandrestaurant.com/" target="_blank" rel="noopener">Bowens Island Restaurant</a> has served roasted oysters on the marsh since 1946 and makes a classic last stop on the way home.</p>
+
+            <h2>Parking and Beach Rules on Folly Island</h2>
+            <p>Street parking is allowed across much of the island as long as all four tires are off the pavement. Paid lots sit around Center Street, at the pier and at <a href="https://ccprc.com/1414" target="_blank" rel="noopener">Folly Beach County Park</a> on the west end, which also has restrooms and seasonal lifeguards. The <a href="https://cityoffollybeach.com/beach-rules" target="_blank" rel="noopener">City of Folly Beach</a> bans alcohol, glass and smoking on the beach, keeps dogs off the sand from 10 a.m. to 6 p.m. between May and September, and asks everyone to keep lights off the beach during loggerhead nesting season from May through October. Our <a href="blog/folly-beach-vacation.html">Folly Beach vacation planner</a> covers the rest, including golf cart rules.</p>
+
+            <h2>Surfing Folly Beach, South Carolina</h2>
+            <p>Folly is the surf capital of the state. <a href="https://www.mckevlins.com/" target="_blank" rel="noopener">McKevlin's Surf Shop</a> at 8 Center Street has been outfitting surfers since 1965, and <a href="https://www.oceansurfshop.com/" target="_blank" rel="noopener">Ocean Surf Shop</a> at 31 Center Street is a few doors down. The famous break is <a href="blog/the-washout-folly-beach.html">the Washout</a> on East Ashley Avenue, while the pier and 10th Street East are friendlier for newer surfers. Check the <a href="blog/folly-beach-surf-cam.html">Folly Beach surf cams</a> before you load the boards.</p>
+
+            <h2>Center Street Restaurants and Breakfast Spots</h2>
+            <p>Most of the island's food is within a short walk of the pier. <a href="https://www.lostdogfollybeach.com/" target="_blank" rel="noopener">Lost Dog Cafe</a> on West Huron Avenue is the breakfast line worth waiting in. <a href="https://www.ritasseasidegrille.com/" target="_blank" rel="noopener">Rita's Seaside Grille</a> at 2 Center Street has the patio and live music, <a href="https://crabshacks.com/folly-beach.php" target="_blank" rel="noopener">Folly Beach Crab Shack</a> at 26 Center Street does steamed seafood buckets, and <a href="https://www.tacoboy.net/" target="_blank" rel="noopener">Taco Boy</a> on East Ashley Avenue handles tacos and margaritas. See our full <a href="dining.html">Folly Beach dining guide</a> for more.</p>
+
+            <h2>Where to Stay on Folly Beach</h2>
+            <p><a href="https://www.tidesfollybeach.com/" target="_blank" rel="noopener">Tides Folly Beach</a> at 1 Center Street is the island's oceanfront hotel, right beside the pier. Most visitors rent a house or condo instead: front-beach rentals put you on the sand, while river-side homes along the Folly River trade ocean views for marsh sunsets and quieter streets. If you'd rather sleep under the stars, camping isn't allowed on the island, but our guide to <a href="blog/camping-near-folly-beach.html">camping near Folly Beach</a> lists campgrounds a few minutes away on James Island and Johns Island.</p>
           </div>
         </div>
       </div>
@@ -786,13 +870,13 @@
             <h3>Folly Beach <span>Latest</span> Real Estate</h3>
             <div class="feature-img feature-realestate" role="img" aria-label="Folly Beach home with boardwalk to the beach"></div>
             <p class="text-muted">Search the latest Folly Beach homes, condos and oceanfront property.</p>
-            <a href="#" class="btn btn-ocean">Search More</a>
+            <a href="https://www.zillow.com/folly-beach-sc/" target="_blank" rel="noopener" class="btn btn-ocean">Search Homes</a>
           </div>
           <div class="col-md-6 feature-card">
             <h3>Folly Beach <span>Vacation</span> Rentals</h3>
             <div class="feature-img feature-rentals" role="img" aria-label="Colorful Folly Beach vacation rental house"></div>
             <p class="text-muted">Find beach houses and cottages for your next Folly Beach getaway.</p>
-            <a href="#" class="btn btn-ocean">Search More</a>
+            <a href="blog/folly-beach-vacation.html" class="btn btn-ocean">Where to Stay</a>
           </div>
         </div>
       </div>
@@ -807,42 +891,60 @@
             <h2 class="section-title mb-4">From the Folly Beach Now Blog</h2>
 
             <article class="post-item d-flex gap-3">
-              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-sea-sand.png')" aria-label="Sea and Sand Festival post"></a>
+              <a href="blog/folly-beach-bachelorette-party.html" class="post-thumb" style="background-image:url('images/folly-beach-bachelorette-party-hero.png')" aria-label="Folly Beach Bachelorette Party Guide"></a>
               <div>
-                <h3><a href="blog.html">Sea &amp; Sand Festival: What to Know</a></h3>
-                <p class="post-meta mb-1">Events</p>
-                <p class="mb-0 small">Parking tips, the best times to go and what to bring for the island's big spring festival.</p>
+                <h3><a href="blog/folly-beach-bachelorette-party.html">Folly Beach Bachelorette Party Guide</a></h3>
+                <p class="post-meta mb-1">Bachelorette</p>
+                <p class="mb-0 small">Boat trips, beach days and Center Street nights for the bride crew.</p>
               </div>
             </article>
 
             <article class="post-item d-flex gap-3">
-              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-christmas-parade.png')" aria-label="Christmas parade post"></a>
+              <a href="blog/folly-beach-girls-weekend.html" class="post-thumb" style="background-image:url('images/folly-beach-girls-weekend-hero.png')" aria-label="A Girls' Weekend on Folly Beach"></a>
               <div>
-                <h3><a href="blog.html">Folly Beach Christmas Parade Guide</a></h3>
-                <p class="post-meta mb-1">Events</p>
-                <p class="mb-0 small">Where to watch, when it starts and how the island does the holidays.</p>
+                <h3><a href="blog/folly-beach-girls-weekend.html">A Girls' Weekend on Folly Beach</a></h3>
+                <p class="post-meta mb-1">Getaways</p>
+                <p class="mb-0 small">Brunch, paddleboarding, sunset cruises and where to stay.</p>
               </div>
             </article>
 
             <article class="post-item d-flex gap-3">
-              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-halloween.png')" aria-label="Halloween carnival post"></a>
+              <a href="blog/the-washout-folly-beach.html" class="post-thumb" style="background-image:url('images/girls-weekend-surf-lesson.png')" aria-label="The Washout: Folly's Famous Surf Break"></a>
               <div>
-                <h3><a href="blog.html">Halloween Carnival on Folly</a></h3>
-                <p class="post-meta mb-1">Family</p>
-                <p class="mb-0 small">Costume ideas, kids' activities and a spooky-season plan for families.</p>
+                <h3><a href="blog/the-washout-folly-beach.html">The Washout: Folly's Famous Surf Break</a></h3>
+                <p class="post-meta mb-1">Surfing</p>
+                <p class="mb-0 small">How Hugo created it, best tides and winds, and parking.</p>
               </div>
             </article>
 
             <article class="post-item d-flex gap-3">
-              <a href="blog.html" class="post-thumb" style="background-image:url('images/blog-surf.png')" aria-label="Surfing post"></a>
+              <a href="blog/folly-beach-surf-cam.html" class="post-thumb" style="background-image:url('images/folly-pier.png')" aria-label="Folly Beach Surf Cams"></a>
               <div>
-                <h3><a href="blog.html">A Beginner's Guide to Surfing Folly</a></h3>
-                <p class="post-meta mb-1">Things To Do</p>
-                <p class="mb-0 small">Where to paddle out, lessons and reading the waves at the Washout and the pier.</p>
+                <h3><a href="blog/folly-beach-surf-cam.html">Folly Beach Surf Cams</a></h3>
+                <p class="post-meta mb-1">Surfing</p>
+                <p class="mb-0 small">Live cameras at the pier, the Washout and the front beach.</p>
               </div>
             </article>
 
-            <a href="blog.html" class="btn btn-ocean mt-4">Read the Blog</a>
+            <article class="post-item d-flex gap-3">
+              <a href="blog/camping-near-folly-beach.html" class="post-thumb" style="background-image:url('images/folly-sunset.png')" aria-label="Camping Near Folly Beach"></a>
+              <div>
+                <h3><a href="blog/camping-near-folly-beach.html">Camping Near Folly Beach</a></h3>
+                <p class="post-meta mb-1">Outdoors</p>
+                <p class="mb-0 small">James Island County Park, farm camping and RV sites nearby.</p>
+              </div>
+            </article>
+
+            <article class="post-item d-flex gap-3">
+              <a href="blog/folly-beach-vacation.html" class="post-thumb" style="background-image:url('images/folly-vacation-rental.png')" aria-label="Planning a Folly Beach Vacation"></a>
+              <div>
+                <h3><a href="blog/folly-beach-vacation.html">Planning a Folly Beach Vacation</a></h3>
+                <p class="post-meta mb-1">Plan a Trip</p>
+                <p class="mb-0 small">Rentals, Center Street, island rules and the best time to visit.</p>
+              </div>
+            </article>
+
+            <a href="blog/folly-beach-vacation.html" class="btn btn-ocean mt-4">Start Planning Your Trip</a>
           </div>
 
           <!-- Sidebar -->
@@ -855,8 +957,8 @@
                   <span class="big"><i class="bi bi-water"></i></span>
                   <span>Check today's waves, wind &amp; tide before you paddle out.</span>
                 </div>
-                <!-- Replace this link with your Surfline embed / cam widget if you have one -->
-                <a href="https://www.surfline.com/" target="_blank" rel="noopener" class="btn btn-lime btn-sm mt-2">Live Surf Cam</a>
+                <a href="blog/folly-beach-surf-cam.html" class="btn btn-lime btn-sm mt-2">Folly Beach Surf Cams</a>
+                <a href="https://www.surfline.com/surf-reports-forecasts-cams/united-states/south-carolina/charleston-county/folly-beach/4578801" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm mt-2">Surfline Forecast</a>
               </div>
             </div>
 
@@ -876,20 +978,18 @@
             </div>
 
             <div class="widget">
-              <h3 class="widget-title">Folly Beach Now Tags</h3>
+              <h3 class="widget-title">Explore Folly</h3>
               <div class="tag-cloud">
-                <a href="blog.html">4th of July</a>
-                <a href="blog.html">Activities</a>
-                <a href="blog.html">Adventure</a>
-                <a href="blog.html">Beach Access</a>
-                <a href="blog.html">Dining</a>
-                <a href="blog.html">Festivals</a>
-                <a href="blog.html">Fishing</a>
-                <a href="blog.html">Live Music</a>
-                <a href="blog.html">Real Estate</a>
-                <a href="blog.html">Surfing</a>
-                <a href="blog.html">Vacation Rentals</a>
-                <a href="blog.html">5K Run</a>
+                <a href="events.html">Events</a>
+                <a href="dining.html">Dining</a>
+                <a href="blog/the-washout-folly-beach.html">The Washout</a>
+                <a href="blog/folly-beach-surf-cam.html">Surf Cams</a>
+                <a href="blog/camping-near-folly-beach.html">Camping</a>
+                <a href="blog/folly-beach-vacation.html">Vacation Rentals</a>
+                <a href="blog/folly-beach-bachelorette-party.html">Bachelorette</a>
+                <a href="blog/folly-beach-girls-weekend.html">Girls Weekend</a>
+                <a href="about.html#beach-rules">Beach Rules</a>
+                <a href="https://partycharleston.com">Charleston Nightlife</a>
               </div>
             </div>
           </aside>
@@ -923,14 +1023,13 @@
     <div class="container">
       <div class="row g-4 pb-4">
         <div class="col-md-6 col-lg-3">
-          <a href="index.html" class="brand-logo d-inline-block mb-3" style="font-size:1.8rem">Folly Beach <span>Now</span></a>
-          <p class="small">Everything you need to stay current on Folly Beach, South Carolina: events, dining, beach info and island news.
-          </p>
+          <a href="/" class="brand-logo d-inline-block mb-3" style="font-size:1.8rem">Folly Beach <span>Now</span></a>
+          <p class="small">Folly Beach Now is an independent guide to Folly Beach, South Carolina &mdash; Charleston's beach town &mdash; covering events, dining, surf and island news. Official info lives at the <a href="https://cityoffollybeach.com/" target="_blank" rel="noopener">City of Folly Beach</a>.</p>
         </div>
         <div class="col-6 col-lg-3">
           <h3 class="widget-title">Explore</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="dining.html">Dining</a></li>
             <li><a href="about.html">About</a></li>
@@ -938,13 +1037,14 @@
           </ul>
         </div>
         <div class="col-6 col-lg-3">
-          <h3 class="widget-title">Blog Categories</h3>
+          <h3 class="widget-title">Folly Beach Guides</h3>
           <ul>
-            <li><a href="blog.html">Events &amp; Festivals</a></li>
-            <li><a href="blog.html">Food &amp; Drink</a></li>
-            <li><a href="blog.html">Things To Do</a></li>
-            <li><a href="blog.html">Beach Info</a></li>
-            <li><a href="blog.html">Real Estate</a></li>
+            <li><a href="blog/the-washout-folly-beach.html">The Washout</a></li>
+            <li><a href="blog/folly-beach-surf-cam.html">Surf Cams</a></li>
+            <li><a href="blog/folly-beach-vacation.html">Vacation Planner</a></li>
+            <li><a href="blog/camping-near-folly-beach.html">Camping Near Folly</a></li>
+            <li><a href="blog/folly-beach-bachelorette-party.html">Bachelorette Party</a></li>
+            <li><a href="blog/folly-beach-girls-weekend.html">Girls' Weekend</a></li>
           </ul>
         </div>
         <div class="col-md-6 col-lg-3">
@@ -954,17 +1054,11 @@
             <li><i class="bi bi-envelope me-2"></i><a href="contact.html">Send us a message</a></li>
             <li><i class="bi bi-megaphone me-2"></i><a href="contact.html">Submit an event</a></li>
           </ul>
-          <div class="d-flex gap-3 fs-5 mt-2">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          </div>
         </div>
       </div>
       <div class="footer-bottom d-md-flex justify-content-between py-3">
         <span>&copy; <span id="year"></span> Folly Beach Now. All rights reserved.</span>
-        <span>Independent local guide to Folly Beach, SC.</span>
+        <span>Independent local guide to Folly Beach, Charleston, SC.</span>
       </div>
     </div>
   </footer>
